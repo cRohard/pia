@@ -5,7 +5,9 @@
   "scripts": {
     "ng": "ng",
     "start": "node server.js",
-    "build": "cp node_modules/save-svg-as-png/lib/* node_modules/save-svg-as-png/ && ng build --prod --build-optimizer --sourcemaps && mkdir app && mv dist app/",
+    "preinstall": "npm install",
+    "postinstall": "cp node_modules/save-svg-as-png/lib/* node_modules/save-svg-as-png/",
+    "build": "ng build --prod --build-optimizer --sourcemaps && mkdir app && mv dist app/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
