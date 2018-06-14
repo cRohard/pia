@@ -29,12 +29,15 @@
     "font-awesome": "^4.7.0",
     "foundation-sites": "^6.3.1",
     "html2canvas": "^1.0.0-alpha.10",
+    "http": "0.0.0",
+    "http-auth": "^3.2.3",
     "ngx-chips": "~1.5.11",
     "normalize.css": "^7.0.0",
     "rollbar": "^2.2.8",
     "rxjs": "^5.1.0",
     "save-svg-as-png": "^1.4.5",
     "tinymce": "^4.6.7",
+    "typescript": "^2.3.4",
     "zone.js": "^0.8.16"
   },
   "devDependencies": {

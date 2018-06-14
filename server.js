@@ -15,18 +15,20 @@ const path = require('path');
 // // Start the app by listening on the default Heroku port
 // app.listen(process.env.PORT || 8086);
 
+// HTTP module
+var http = require('http');
+
 // Authentication module.
 var auth = require('http-auth');
 var basic = auth.basic({
-    realm: "Simon Area.",
-    file: __dirname + "/../data/users.htpasswd"
+	realm: "Simon Area.",
+	file: "users.htpasswd" // gevorg:gpass, Sarah:testpass
 });
- 
-// Application setup.
-const app = express();
-app.use(auth.connect(basic));
- 
-// Setup route.
-app.get('/', (req, res) => {
-    res.send(`Hello from express - ${req.user}!`);
+
+// Creating new HTTP server.
+http.createServer(basic, (req, res) => {
+	res.end(`Welcome to private area - ${req.user}!`);
+}).listen(1337, () => {
+	// Log URL.
+	console.log("Server running at http://127.0.0.1:1337/");
 });
