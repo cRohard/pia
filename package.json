@@ -7,7 +7,7 @@
     "start": "node server.js",
     "postinstall": "./configure.sh",
     "build": "ng build --prod --build-optimizer --sourcemaps",
-    "postbuild": "mv dist app/"
+    "postbuild": "mv dist app/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
