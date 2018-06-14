@@ -10,7 +10,10 @@ var basic = auth.basic({
     file: "users.htpasswd"
 });
 
-// // Serve only the static files form the dist directory
+app.use(auth.connect(basic));
+
+// Serve only the static files form the dist directory
+
 app.use(express.static(__dirname + '/app/dist'));
 
 app.get('/*', function(req,res) {
