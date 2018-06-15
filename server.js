@@ -1,16 +1,16 @@
 // //Install express server
 const express = require('express');
 const path = require('path');
+const basicAuth = require('express-basic-auth')
+ 
 
 const app = express();
+const user = process.env.ADMIND_USER
+const pass = process.env.ADMIND_PASS
+app.use(basicAuth({
+    users: { user : pass }
+}))
 
-var auth = require('http-auth');
-var basic = auth.basic({
-    realm: "Simon Area.",
-    file: "users.htpasswd"
-});
-
-app.use(auth.connect(basic));
 
 // Serve only the static files form the dist directory
 
