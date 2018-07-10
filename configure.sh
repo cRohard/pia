@@ -9,6 +9,7 @@ echo $USER2 >> users.htpasswd
 echo $USER3 >> users.htpasswd
 echo $USER4 >> users.htpasswd
 echo $USER5 >> users.htpasswd
+echo $USER6 >> users.htpasswd
 cp node_modules/save-svg-as-png/lib/* node_modules/save-svg-as-png/
 ng build --prod --build-optimizer --sourcemaps
 mkdir app
